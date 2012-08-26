@@ -6,6 +6,8 @@
         url: null,
         maxFileSize: 1, // MB
         maxFileCount: 5,
+        csrfTokenName: null,
+        csrfToken: null,
         allowedExtensions: ["image/png", "image/jpg", "image/jpeg", "image/gif"],
         uploadStarted: null,
         uploadUpdated: null,
@@ -62,6 +64,9 @@
         function upload(file) {
             var formData = new FormData();
             formData.append(options.paramname, file);
+            if (options.csrfTokenName != null && options.csrfToken != null) {
+                formData.append(options.csrfTokenName, options.csrfToken);
+            }
             if (options.uploadStarted != null) options.uploadStarted(file);
             $.ajax({
                 type: 'POST',
