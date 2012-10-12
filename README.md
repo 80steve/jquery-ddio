@@ -12,7 +12,9 @@ jQuery Plugin for DragDrop Upload. With this plugin you can easily create an ele
 $(document).ready(function()	{
     $("#uploadDiv").ddio({
         maxFileSize: 1,
-        paramname: "upload_file", // the parameter name for server to read
+        paramname: "upload_file", // the file parameter name sent to server
+        csrfTokenName: "csrf_token", // the csrf token parameter name sent to server
+        csrfToken: "abcdef", // the csrf token value
         url: "upload/create/", // server url
         dragEnter: function(e) {
         // do sth when drag entered the element
