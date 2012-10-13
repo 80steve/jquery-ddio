@@ -2,9 +2,16 @@
 
 jQuery Plugin for DragDrop Upload. With this plugin you can easily create an element which is drag-drop-upload enabled.
 
-## Instruction
+## Setup
+
+Required: jQuery <http://jquery.com/>
+
+## Usage
 
 ```javascript
+<script src="jquery.min.js"></script>
+<script src="jquery-ddio.js"></script>
+
 // Normal div element
 <div id="uploadDiv"/>
 
